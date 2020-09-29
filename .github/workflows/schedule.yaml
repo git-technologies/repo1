@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '* * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Rebase
+      run: |
+          git remote add upstream https://github.com/upstream-repository-here
+          git pull --rebase upstream master
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.TOKEN }}
