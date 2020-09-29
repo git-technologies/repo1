@@ -17,4 +17,3 @@ jobs:
         upstream_branch: "master"
         branch: "master"
         method: "rebase"
-        args: "--no-push"
