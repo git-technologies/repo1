@@ -15,7 +15,7 @@ jobs:
         fetch-depth: 0
     - name: Rebase
       run: |
-          git remote add upstream https://github.com/upstream-repository-here
+          git remote add upstream https://github.com/kovetskiy/repo1
           git pull --rebase upstream master
     - name: Push changes
       uses: ad-m/github-push-action@master
