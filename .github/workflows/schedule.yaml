@@ -3,7 +3,7 @@ name: 'Rebase'
 on:
   schedule:
     - cron: '* * * * *'
-  workflow_dispatch: # on button click
+  workflow_dispatch:
 
 
 jobs:
@@ -16,12 +16,12 @@ jobs:
         fetch-depth: 0
     - name: Rebase
       run: |
-          git config user.name ${GITHUB_ACTOR}
-          git config user.email ${GITHUB_ACTOR}@example.com
-          git remote add upstream https://github.com/kovetskiy/repo1
+          git config user.name "Egor Kovetskiy"
+          git config user.email "e.kovetskiy@gmail.cm"
+          git remote add upstream https://github.com/neoclide/coc.nvim
           git pull --rebase upstream master
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         force: true
