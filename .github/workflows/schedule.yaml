@@ -15,6 +15,8 @@ jobs:
         fetch-depth: 0
     - name: Rebase
       run: |
+          git config user.name ${GITHUB_ACTOR}
+          git config user.email ${GITHUB_ACTOR}@example.com
           git remote add upstream https://github.com/kovetskiy/repo1
           git pull --rebase upstream master
     - name: Push changes
