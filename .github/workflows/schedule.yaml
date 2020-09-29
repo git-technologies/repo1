@@ -1,3 +1,4 @@
+name: 'Rebase'
 on:
   schedule:
     - cron: '* * * * *'
