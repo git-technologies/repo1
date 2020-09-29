@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: shitiomatic/forkbacon@master
       with:
-        upstream_url: "https://github.com/neoclide/coc.nvim" # Required! Upstream https clone URL
-        upstream_branch: "master"   # Upstream Branch to use
+        upstream_url: "https://github.com/kovetskiy/repo1"
+        upstream_branch: "master"
         branch: "master"
         method: "rebase"
         args: "--no-push"
