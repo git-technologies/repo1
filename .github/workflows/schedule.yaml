@@ -1,9 +1,9 @@
 name: 'Rebase'
 
 on:
-  push:
   schedule:
     - cron: '* * * * *'
+  workflow_dispatch: # on button click
 
 
 jobs:
