@@ -10,18 +10,9 @@ jobs:
   rebase:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-    - name: Rebase
-      run: |
-          git config user.name "Egor Kovetskiy"
-          git config user.email "e.kovetskiy@gmail.cm"
-          git remote add upstream https://github.com/neoclide/coc.nvim
-          git pull --rebase upstream master
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: true
+      - uses: tgymnich/fork-sync@v1.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          base: master
+          head: master
+          merge_method: rebase
